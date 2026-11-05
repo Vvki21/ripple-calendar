@@ -761,7 +761,7 @@ export default function RippleApp() {
   return (
     <div className="app" style={paletteVars(palette)} data-stage={stage.id}>
       <nav className="topnav">
-        <a className="topnav__brand" href="/" aria-label="Ripple home"><Logo /></a>
+        <a className="topnav__brand" href={import.meta.env.BASE_URL} aria-label="Ripple home"><Logo /></a>
 
         <div className="topnav__date">
           <div className="topnav__step" role="group" aria-label={`Change ${view}`}>
@@ -796,7 +796,7 @@ export default function RippleApp() {
           >
             Demo
           </button>
-          <a className="iconbtn" href="/design-system" aria-label="Design system" title="Design system"><SwatchIcon /></a>
+          <a className="iconbtn" href={`${import.meta.env.BASE_URL}design-system`} aria-label="Design system" title="Design system"><SwatchIcon /></a>
           <button className="newbtn" type="button" onClick={newFromNav} aria-label="New event"><PlusIcon /> New</button>
         </div>
       </nav>

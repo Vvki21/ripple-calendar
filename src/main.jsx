@@ -7,7 +7,9 @@ const routes = {
   '/design-system': lazy(() => import('./design-system/DesignSystem.jsx')),
 };
 
-const path = window.location.pathname.replace(/\/+$/, '') || '/';
+// Strip the deploy base (e.g. /ripple-calendar/ on GitHub Pages) before matching.
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const path = window.location.pathname.slice(base.length).replace(/\/+$/, '') || '/';
 const Page = routes[path] || routes['/'];
 
 createRoot(document.getElementById('root')).render(

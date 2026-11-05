@@ -210,7 +210,7 @@ function Nav({ onExport }) {
         <a href="#spacing">Spacing</a>
         <a href="#components">Components</a>
         <a href="#preview">Preview</a>
-        <a href="/" className="nav__app">Prototype →</a>
+        <a href={import.meta.env.BASE_URL} className="nav__app">Prototype →</a>
       </div>
       <button className="dsbtn dsbtn--dark dsbtn--sm" onClick={onExport} type="button">
         <CopyIcon /> Copy palette
